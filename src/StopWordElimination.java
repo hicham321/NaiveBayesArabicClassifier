@@ -102,6 +102,30 @@ public class StopWordElimination {
 		this.ListeDesStopWord= ListeDesStopWord;
 	}
 	
+	public static boolean isInteger(String str) {
+	    if (str == null) {
+	        return false;
+	    }
+	    int length = str.length();
+	    if (length == 0) {
+	        return false;
+	    }
+	    int i = 0;
+	    if (str.charAt(0) == '-') {
+	        if (length == 1) {
+	            return false;
+	        }
+	        i = 1;
+	    }
+	    for (; i < length; i++) {
+	        char c = str.charAt(i);
+	        if (c < '0' || c > '9') {
+	            return false;
+	        }
+	    }
+	    return true;
+	}
+	
 	
 	public ArrayList<String> EliminerStopWord(){
 		
@@ -112,7 +136,7 @@ public class StopWordElimination {
 
 		    for(int j=0; j<this.ListeDesStopWord.size();j++){
 				//la condition d'elemination
-				if(this.ListeDesStopWord.get(j).equals(ListeDesMots.get(i)) ) {
+				if( this.ListeDesStopWord.get(j).equals(ListeDesMots.get(i)) || isInteger(this.ListeDesMots.get(i))    ) {
 				    	StopWordTrouver=true;
 				    	this.nombredemotvides++;
 				    	break;
