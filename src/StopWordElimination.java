@@ -166,7 +166,7 @@ public class StopWordElimination {
 		
       
 		File file= new File("C:/Users/Hicham/Desktop/stop-words_arabic_1_ar.txt");
-		File file2= new File("liens vers la ripertoire des fichiers dans le stock ");
+		//File file2= new File("liens vers la ripertoire des fichiers dans le stock ");
 		
 		StopWordElimination StopWordObject= new StopWordElimination(file);
 		
