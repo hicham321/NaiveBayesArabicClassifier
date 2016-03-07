@@ -58,6 +58,7 @@ public static void main(String[] args) throws IOException,UnsupportedEncodingExc
 	vectorisation v = new vectorisation(file);
 	
 	
+	
 
 	
 	

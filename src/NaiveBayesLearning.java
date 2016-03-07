@@ -89,6 +89,39 @@ private ArrayList<ArrayList<String>>   FichierAuVecteur (String LienVersRepertoi
  	
  	return VecteurDesFichiers;
  }
+
+//calculating the probability of a word in a class 
+
+private ArrayList<Map<String,Integer>> Vectorisation( ArrayList<ArrayList<String>> listeDesVecteurs){
+	 
+	 //iterating in the list of vectors 
+	 
+	 for(int i =0; i<listeDesVecteurs.size();i++){
+		 
+		 Map<String ,Integer> vecteurDesFrequences= new HashMap<String,Integer>();
+		 
+
+		 for(int j=0;j<listeDesVecteurs.get(i).size();j++){
+			 int compteur=0;
+			 for(int k=0; k<listeDesVecteurs.get(i).size();k++){
+				 
+				 //testing if the strings are equal
+				 
+				 if(listeDesVecteurs.get(i).get(j).equals(listeDesVecteurs.get(i).get(k))){
+					 
+					
+					 compteur++;
+				 }
+
+			 }
+			 vecteurDesFrequences.put(listeDesVecteurs.get(i).get(j),compteur);
+
+		 }
+
+		 this.map.add(vecteurDesFrequences);
+		 }
+	 return map;
+	 }
 	
 	
 
